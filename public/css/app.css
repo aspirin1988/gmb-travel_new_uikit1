@@ -1,0 +1,418 @@
+@font-face {
+  font-family: Helvetica;
+  src: url(../fonts/HelveticaNeueCyr-Roman.otf); }
+@font-face {
+  font-family: MyriadPro;
+  src: url(../fonts/MyriadPro-Regular.otf); }
+.mobile-nav-custom li > a {
+  font-family: Helvetica;
+  color: white;
+  font-size: 18px;
+  line-height: 1.2; }
+.mobile-nav-custom li.uk-active {
+  background: white; }
+  .mobile-nav-custom li.uk-active a {
+    color: black; }
+
+.main-header {
+  z-index: 99999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; }
+  @media (max-width: 768px) {
+    .main-header {
+      position: relative;
+      z-index: 999; }
+      .main-header .header-contacts .uk-grid > * {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .main-header .header-contacts .uk-grid > *:last-child {
+        margin-top: 20px; } }
+  .main-header .uk-search, .main-header .uk-search-field {
+    height: 100%; }
+  .main-header .uk-search:before {
+    top: 4px; }
+  .main-header .offcanvas-link-menu {
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf; }
+  .main-header .sticky-active-custom {
+    z-index: 99999999;
+    background: white !important; }
+  .main-header .header-contacts {
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background: rgba(255, 255, 255, 0.7); }
+    .main-header .header-contacts a {
+      color: black;
+      font-family: Helvetica;
+      line-height: 1.2;
+      font-size: 16px;
+      display: block;
+      margin: 2px 0 !important; }
+  .main-header .menu-desktop {
+    background: white; }
+  .main-header .uk-navbar {
+    background: transparent; }
+    .main-header .uk-navbar .uk-navbar-nav {
+      width: 100%; }
+      .main-header .uk-navbar .uk-navbar-nav li.uk-active a {
+        background: #52B3D9; }
+      .main-header .uk-navbar .uk-navbar-nav li a {
+        font-family: Helvetica;
+        color: black;
+        font-size: 18px; }
+        .main-header .uk-navbar .uk-navbar-nav li a:hover {
+          background: #52B3D9; }
+
+@keyframes rotationIcon {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+main .img-main-page {
+  width: 100%;
+  background-image: url(../img/background_main.jpg);
+  background-size: cover !important;
+  height: 100vh; }
+  @media (max-width: 768px) {
+    main .img-main-page {
+      height: 70vh;
+      background-position: center center; } }
+  main .img-main-page article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 10%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-flow: column; }
+    main .img-main-page article .article-in {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px !important;
+      text-align: center; }
+      @media (max-width: 768px) {
+        main .img-main-page article .article-in {
+          margin-right: 20px; } }
+      main .img-main-page article .article-in h2 {
+        font-size: 49px;
+        font-family: MyriadPro;
+        color: #f27e00;
+        line-height: 1.2; }
+        @media (max-width: 768px) {
+          main .img-main-page article .article-in h2 {
+            text-align: center;
+            font-size: 26px; } }
+      main .img-main-page article .article-in h3 {
+        font-size: 45px;
+        font-family: "OpenSans";
+        color: #4e7be0;
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-align: left;
+        margin-top: 20px;
+        font-weight: bold; }
+        main .img-main-page article .article-in h3 span {
+          font-size: 30px;
+          text-transform: none; }
+        @media (max-width: 768px) {
+          main .img-main-page article .article-in h3 {
+            font-size: 26px;
+            text-align: center; } }
+main .services-main-body .second-service-background {
+  background: rgba(255, 255, 255, 0.2); }
+main .services-main-body h3.services-title {
+  text-align: center;
+  font-size: 32px;
+  font-family: "OpenSans";
+  color: black;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 20px;
+  font-weight: bold; }
+main .services-main-body .uk-grid {
+  padding-bottom: 30px; }
+  @media (max-width: 768px) {
+    main .services-main-body .uk-grid {
+      padding-bottom: 0px; } }
+main .services-main-body .uk-grid .uk-width-small-1-1:nth-child(1) .uk-panel {
+  background: #00b7f4; }
+main .services-main-body .uk-grid .uk-width-small-1-1:nth-child(2) .uk-panel {
+  background: #ff801e; }
+main .services-main-body .uk-grid .uk-width-small-1-1:nth-child(3) .uk-panel {
+  background: #cbb542; }
+main .services-main-body .uk-panel {
+  padding: 10px; }
+  @media (max-width: 768px) {
+    main .services-main-body .uk-panel {
+      margin-bottom: 20px; } }
+  @media (min-width: 768px) {
+    main .services-main-body .uk-panel {
+      margin-bottom: 20px; } }
+  main .services-main-body .uk-panel:hover .uk-badge {
+    animation: rotationIcon 1.5s 1; }
+  main .services-main-body .uk-panel h3 {
+    font-size: 30px;
+    padding-right: 14% !important;
+    font-family: MyriadPro;
+    line-height: 1; }
+main .services-main-body .uk-badge {
+  background: transparent !important;
+  color: black;
+  font-size: 35px;
+  top: 10px;
+  right: 10px; }
+main .about-body .about-background-body {
+  background: rgba(255, 255, 255, 0.2); }
+main .about-body .uk-grid:last-child {
+  margin-top: 0; }
+main .about-body article.slogan {
+  font-family: Helvetica !important;
+  font-size: 16px !important;
+  color: black !important;
+  line-height: 1.2 !important; }
+main .about-body .uk-grid {
+  padding-bottom: 20px; }
+  main .about-body .uk-grid article {
+    font-family: Helvetica;
+    font-size: 18px;
+    color: black;
+    text-align: left;
+    line-height: 1.2; }
+    main .about-body .uk-grid article .logo-article {
+      float: left;
+      margin-bottom: 20px;
+      margin-right: 20px; }
+      @media (min-width: 768px) {
+        main .about-body .uk-grid article .logo-article {
+          margin-right: 20px !important;
+          float: left !important;
+          width: auto !important; } }
+      @media (max-width: 768px) {
+        main .about-body .uk-grid article .logo-article {
+          margin-right: 0;
+          float: none;
+          width: 100%; } }
+main .about-body h3 {
+  text-align: center;
+  font-size: 32px;
+  font-family: "OpenSans";
+  color: black;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 20px;
+  font-weight: bold; }
+@keyframes rotationIconSecond {
+  from {
+    transform: rotateY(0deg); }
+  to {
+    transform: rotateY(360deg); } }
+main .about-body .icon-number img {
+  height: 100px;
+  margin-bottom: 20px; }
+  @media (max-width: 768px) {
+    main .about-body .icon-number img {
+      height: 70px; } }
+main .about-body .icon-number img:hover {
+  animation: rotationIconSecond 2s infinite;
+  animation-delay: 0s; }
+main .about-body .icon-title {
+  font-size: 16px;
+  font-family: "Myriad Pro";
+  color: black;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase; }
+  @media (max-width: 768px) {
+    main .about-body .icon-title {
+      margin-top: 0;
+      margin-bottom: 20px; } }
+main .reviews-body {
+  background-image: url(../img/reviews.jpg);
+  background-size: cover; }
+  main .reviews-body .reviews-title {
+    text-align: center;
+    font-size: 32px;
+    font-family: "OpenSans";
+    color: black;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-weight: bold; }
+  main .reviews-body .reviews-block {
+    text-align: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.8); }
+    main .reviews-body .reviews-block .img-reviews {
+      width: 100%;
+      text-align: center; }
+      main .reviews-body .reviews-block .img-reviews img {
+        height: 150px;
+        width: 150px; }
+  main .reviews-body .uk-slideset {
+    padding-bottom: 30px; }
+main .questions-body h3 {
+  text-align: center;
+  font-size: 32px;
+  font-family: "OpenSans";
+  color: black;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  font-weight: bold; }
+main .questions-body .questions-list {
+  padding-bottom: 20px; }
+main .questions-body .uk-grid {
+  border-bottom: 1px solid #d3d3d3; }
+main .questions-body .question {
+  padding: 25px; }
+  main .questions-body .question h4 {
+    font-family: MyriadPro;
+    color: black;
+    font-weight: bold;
+    line-height: 1.2;
+    font-size: 22px; }
+main .questions-body .response {
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 1.2;
+  color: black;
+  text-align: left;
+  padding: 20px; }
+main .form-body {
+  background-image: url(../img/form.jpg);
+  background-size: cover; }
+  main .form-body form {
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    padding: 25px; }
+    @media (max-width: 768px) {
+      main .form-body form {
+        box-sizing: border-box; } }
+    @media (min-width: 768px) {
+      main .form-body form {
+        box-sizing: border-box; } }
+    main .form-body form h3 {
+      text-align: center;
+      font-size: 26px;
+      font-family: MyriadPro;
+      line-height: 1.2;
+      color: black; }
+    main .form-body form input {
+      border: 1px solid black;
+      font-family: Helvetica;
+      font-size: 18px;
+      padding: 5px;
+      line-height: 1.2;
+      display: block;
+      margin: 10px;
+      width: 100%;
+      box-sizing: border-box; }
+    main .form-body form input[type="submit"] {
+      background: white; }
+main .tour-body {
+  padding: 20px 0; }
+  main .tour-body .grid-tour > * {
+    margin-bottom: 20px; }
+  main .tour-body h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: MyriadPro;
+    line-height: 1.2;
+    color: black; }
+  main .tour-body .tour-single-block {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center; }
+    main .tour-body .tour-single-block .link-tour {
+      padding: 0 10%; }
+      main .tour-body .tour-single-block .link-tour a {
+        font-family: Helvetica;
+        font-size: 22px;
+        color: black;
+        line-height: 1; }
+    main .tour-body .tour-single-block img.thumbnail-tour {
+      width: 100%; }
+  main .tour-body .hot-tours-list h2 {
+    font-family: MyriadPro;
+    color: black;
+    font-size: 30px;
+    line-height: 1.2; }
+  main .tour-body .hot-tours-list .hot-tour-single {
+    padding: 10px;
+    border: 2px solid red;
+    margin-bottom: 15px; }
+    main .tour-body .hot-tours-list .hot-tour-single img {
+      width: 100%; }
+    main .tour-body .hot-tours-list .hot-tour-single h3 {
+      font-family: MyriadPro;
+      font-size: 25px;
+      color: black;
+      margin-bottom: 5px; }
+    main .tour-body .hot-tours-list .hot-tour-single article {
+      font-family: MyriadPro;
+      font-size: 18px;
+      color: black; }
+    main .tour-body .hot-tours-list .hot-tour-single p {
+      font-size: 18px;
+      font-family: Helvetica;
+      color: #0c5ea8;
+      margin-bottom: 0;
+      margin-top: 5px; }
+      main .tour-body .hot-tours-list .hot-tour-single p span {
+        color: black; }
+main .header-image-tour {
+  background-image: url(../img/France.jpg);
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  background-position: 30% 100%; }
+  main .header-image-tour .title-tour-header {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5% 10px;
+    text-align: center; }
+    main .header-image-tour .title-tour-header h3 {
+      padding: 10px 25px;
+      font-family: MyriadPro;
+      color: black;
+      font-size: 22px; }
+    main .header-image-tour .title-tour-header article {
+      font-family: Helvetica;
+      font-size: 16px;
+      line-height: 1.2; }
+    main .header-image-tour .title-tour-header p {
+      font-family: Helvetica;
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 0;
+      margin-top: 5px; }
+      main .header-image-tour .title-tour-header p span {
+        font-weight: bold; }
+        main .header-image-tour .title-tour-header p span i {
+          color: green; }
+main .table-tour {
+  padding: 10px; }
+main .news-list {
+  padding: 10px; }
+
+footer {
+  background: black;
+  padding: 20px 0; }
+  footer address p, footer address p > a {
+    font-size: 22px;
+    font-family: Helvetica;
+    color: white;
+    line-height: 1.2; }
+
+/*# sourceMappingURL=app.css.map */
