@@ -1,0 +1,15 @@
+[Mon Jul 18 10:32:30.236817 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP Parse error:  syntax error, unexpected end of file in /home/serg/site/zan_zakon/wp-content/themes/zan_zakon/template-parts/content-index.php on line 261
+[Mon Jul 18 10:32:30.236851 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP Stack trace:
+[Mon Jul 18 10:32:30.236861 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   1. {main}() /home/serg/site/zan_zakon/index.php:0
+[Mon Jul 18 10:32:30.236868 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   2. require() /home/serg/site/zan_zakon/index.php:17
+[Mon Jul 18 10:32:30.236886 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   3. require_once() /home/serg/site/zan_zakon/wp-blog-header.php:19
+[Mon Jul 18 10:32:30.236891 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   4. include() /home/serg/site/zan_zakon/wp-includes/template-loader.php:75
+[Mon Jul 18 10:32:30.236895 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   5. get_template_part() /home/serg/site/zan_zakon/wp-content/themes/zan_zakon/page.php:24
+[Mon Jul 18 10:32:30.236899 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   6. locate_template() /home/serg/site/zan_zakon/wp-includes/general-template.php:167
+[Mon Jul 18 10:32:30.236902 2016] [:error] [pid 7557] [client 127.0.0.1:60210] PHP   7. load_template() /home/serg/site/zan_zakon/wp-includes/template.php:531
+[Mon Jul 18 12:13:16.516791 2016] [:error] [pid 12372] [client 127.0.0.1:37490] PHP Fatal error:  Call to undefined function child() in /home/serg/site/zan_zakon/wp-content/themes/zan_zakon/archive.php on line 56, referer: http://zan_zakon.tes/
+[Mon Jul 18 12:13:16.516836 2016] [:error] [pid 12372] [client 127.0.0.1:37490] PHP Stack trace:, referer: http://zan_zakon.tes/
+[Mon Jul 18 12:13:16.516845 2016] [:error] [pid 12372] [client 127.0.0.1:37490] PHP   1. {main}() /home/serg/site/zan_zakon/index.php:0, referer: http://zan_zakon.tes/
+[Mon Jul 18 12:13:16.516852 2016] [:error] [pid 12372] [client 127.0.0.1:37490] PHP   2. require() /home/serg/site/zan_zakon/index.php:17, referer: http://zan_zakon.tes/
+[Mon Jul 18 12:13:16.516861 2016] [:error] [pid 12372] [client 127.0.0.1:37490] PHP   3. require_once() /home/serg/site/zan_zakon/wp-blog-header.php:19, referer: http://zan_zakon.tes/
+[Mon Jul 18 12:13:16.516868 2016] [:error] [pid 12372] [client 127.0.0.1:37490] PHP   4. include() /home/serg/site/zan_zakon/wp-includes/template-loader.php:75, referer: http://zan_zakon.tes/
