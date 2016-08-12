@@ -69,45 +69,28 @@
 	</div>
 
 	<div id="reviews" class="reviews-body" data-uk-parallax="{bg: '-200'}">
+		<?php $category=get_category(3);?>
 		<div class="reviews-background">
 			<div class="uk-container uk-container-center">
-				<h3 class="reviews-title">Отзывы клиентов</h3>
+				<h3 class="reviews-title"><?=$category->name?></h3>
 				<div data-uk-slideset="{small: 1, medium: 1, large: 3}">
 					<div class="uk-slidenav-position">
 						<ul class="uk-grid uk-slideset">
+							<?php $posts=get_posts(array('category_name'=>'reviews','numberposts'=>-1));
+							foreach ($posts as $post): setup_postdata($post);
+							?>
 							<li>
 								<div class="reviews-block uk-flex uk-flex-center uk-flex-middle uk-flex-column">
 									<div class="img-reviews">
-										<img src="public/img/765-default-avatar.png" alt="">
+										<img src="<?=get_the_post_thumbnail_url()?>" alt="">
 									</div>
-									<h3>Имя Клиента</h3>
+									<h3><?=get_the_title()?></h3>
 									<article>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea hic mollitia nemo nostrum quo repudiandae sapiente sit soluta ullam unde. At autem beatae consectetur cupiditate dolor esse quasi ullam voluptatibus.
+										<?php the_content() ?>
 									</article>
 								</div>
 							</li>
-							<li><img src="" alt="">
-								<div class="reviews-block uk-flex uk-flex-center uk-flex-middle uk-flex-column">
-									<div class="img-reviews">
-										<img src="public/img/765-default-avatar.png" alt="">
-									</div>
-									<h3>Имя Клиента</h3>
-									<article>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea hic mollitia nemo nostrum quo repudiandae sapiente sit soluta ullam unde. At autem beatae consectetur cupiditate dolor esse quasi ullam voluptatibus.
-									</article>
-								</div>
-							</li>
-							<li><img src="" alt="">
-								<div class="reviews-block uk-flex uk-flex-center uk-flex-middle uk-flex-column">
-									<div class="img-reviews">
-										<img src="public/img/765-default-avatar.png" alt="">
-									</div>
-									<h3>Имя Клиента</h3>
-									<article>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea hic mollitia nemo nostrum quo repudiandae sapiente sit soluta ullam unde. At autem beatae consectetur cupiditate dolor esse quasi ullam voluptatibus.
-									</article>
-								</div>
-							</li>
+							<?php endforeach; wp_reset_query(); ?>
 						</ul>
 						<a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>
 						<a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideset-item="next"></a>
@@ -119,45 +102,26 @@
 
 	<div id="questions" class="questions-body">
 		<div class="questions-background">
+			<?php $category=get_category(4);?>
 			<div class="uk-container uk-container-center uk-text-center">
-				<h3>Часто задаваемые вопросы</h3>
+				<h3><?=$category->name?></h3>
 				<div class="questions-list">
+					<?php $posts=get_posts(array('category_name'=>'questions','numberposts'=>5));
+					foreach ($posts as $post): setup_postdata($post);
+					?>
 					<div class="uk-grid">
 						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
 							<div class="question">
-								<h4>Какие услуги вы предоставляете?</h4>
+								<h4><?=get_the_title()?></h4>
 							</div>
 						</div>
 						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-2-3">
 							<article class="response">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae cupiditate ducimus esse et itaque iusto libero magnam molestiae officia officiis porro quasi, recusandae reiciendis rem repellat rerum ullam veniam.
+								<?php the_content() ?>
 							</article>
 						</div>
 					</div>
-					<div class="uk-grid">
-						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
-							<div class="question">
-								<h4>Какие услуги вы предоставляете?</h4>
-							</div>
-						</div>
-						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-2-3">
-							<article class="response">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae cupiditate ducimus esse et itaque iusto libero magnam molestiae officia officiis porro quasi, recusandae reiciendis rem repellat rerum ullam veniam.
-							</article>
-						</div>
-					</div>
-					<div class="uk-grid">
-						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
-							<div class="question">
-								<h4>Какие услуги вы предоставляете?</h4>
-							</div>
-						</div>
-						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-2-3">
-							<article class="response">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae cupiditate ducimus esse et itaque iusto libero magnam molestiae officia officiis porro quasi, recusandae reiciendis rem repellat rerum ullam veniam.
-							</article>
-						</div>
-					</div>
+					<?php endforeach; wp_reset_query(); ?>
 				</div>
 			</div>
 		</div>
@@ -168,11 +132,12 @@
 			<div class="uk-container uk-container-center">
 				<div class="uk-grid">
 					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-4">
-						<form action="" class="uk-flex uk-flex-center uk-flex-middle uk-flex-column">
+						<form class="blink-mailer uk-flex uk-flex-center uk-flex-middle uk-flex-column">
 							<h3>Свяжитесь с нами для получения подробной информации!</h3>
-							<input type="text" placeholder="Имя">
-							<input type="email" placeholder="Email">
-							<input type="tel" placeholder="Телефон">
+							<input type="hidden" name="title" value="Обратная связь">
+							<input type="text" placeholder="Имя" name="Имя">
+							<input type="email" placeholder="Email" name="Email">
+							<input type="tel" placeholder="Телефон" name="Телефон">
 							<input type="submit">
 						</form>
 					</div>

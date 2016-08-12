@@ -24,5 +24,14 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/parallax.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slideset.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/sticky.min.js"></script>
+<script src="https://bsh.su/client/script/GET/"></script>
+<script>
+	var submitSMG = new BMModule();
+	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); $('.blink-mailer input,.blink-mailer textarea').prop('disabled', true); $('.blink-mailer h3').html(success); }, function(error) {});
+</script>
+<script>
+	var el = document.querySelector('input[type="tel"]');
+	VMasker(el).maskPattern("+9(999) 999-99-99"); // masking the input
+</script>
 <?php wp_footer() ?>
 </html>
