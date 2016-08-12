@@ -9,10 +9,16 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package gmb-travel
+ * @package art_dani
  */
 
-get_header(); ?>
+if (is_front_page()) {
+	get_header('main');
+}
+else {
+	get_header();
+}
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -20,12 +26,11 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				$page=get_post();
+				get_template_part( 'template-parts/content', $page->post_name );
 
 				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+
 
 			endwhile; // End of the loop.
 			?>
@@ -34,5 +39,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
