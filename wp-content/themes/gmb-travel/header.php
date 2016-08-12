@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>GMB Travel</title>
+	<?php wp_head() ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slidenav.min.css">
@@ -36,12 +36,12 @@
 		<div class="uk-container uk-container-center">
 			<div class="uk-grid">
 				<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-5 uk-text-center">
-					<a href="" class="logo-link"><img src="public/img/logo.png" alt=""></a>
+					<a href="<?=get_permalink(4)?>" class="logo-link"><img src="<?=get_field('logo',4)?>" alt=""></a>
 				</div>
 				<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-4-5 uk-text-right uk-flex-center uk-flex uk-flex-right uk-flex-column">
-					<a href="<?=get_field('phone-1')?>"><?=get_field('phone-1')?></a>
-					<a href="<?=get_field('phone-2')?>"><?=get_field('phone-2')?></a>
-					<a href="<?=get_field('email')?>"><?=get_field('email')?></a>
+					<a href="<?=get_field('phone-1',4)?>"><?=get_field('phone-1',4)?></a>
+					<a href="<?=get_field('phone-2',4)?>"><?=get_field('phone-2',4)?></a>
+					<a href="<?=get_field('email',4)?>"><?=get_field('email',4)?></a>
 				</div>
 			</div>
 		</div>

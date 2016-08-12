@@ -2,16 +2,16 @@
 	<div class="uk-container uk-container-center">
 		<div class="uk-grid">
 			<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
-				<a href="#"><img src="public/img/logo.png" alt=""></a>
+				<a href="<?=get_permalink(4)?>"><img src="<?=get_field('logo',4)?>" alt=""></a>
 				<address>
-					<p>Казахстан, г. Алматы</p>
-					<p><a href="#">+7 (777) 777 77 77</a></p>
-					<p><a href="#">+7 (777) 777 77 77</a></p>
-					<p><a href="#">example@example.com</a></p>
+					<p><?=get_field('address',4)?></p>
+					<a href="<?=get_field('phone-1',4)?>"><?=get_field('phone-1',4)?></a>
+					<a href="<?=get_field('phone-2',4)?>"><?=get_field('phone-2',4)?></a>
+					<a href="<?=get_field('email',4)?>"><?=get_field('email',4)?></a>
 				</address>
 			</div>
 			<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-2-3">
-				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Fs_2iL4H6qGxEwcQwdxS2EbiBHrETlGY&amp;width=100%&amp;height=364&amp;lang=ru_RU&amp;sourceType=constructor&amp;"></script>
+				<?=get_field('map',4);?>
 			</div>
 		</div>
 	</div>
