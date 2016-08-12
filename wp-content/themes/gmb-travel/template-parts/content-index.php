@@ -1,122 +1,71 @@
 
 	<main>
+	<style>
+			main .img-main-page {
+				width: 100%;
+				background-image: url('<?=get_the_post_thumbnail_url()?>');
+				background-size: cover !important;
+				height: 100vh;
+			}
+		</style>
 	<div class="img-main-page uk-position-relative" >
 		<article>
 			<div class="article-in">
-				<h2>МЕЧТАЙТЕ легко!</h2>
-				<h3>ПУТЕШЕСТВУЙТЕ <span>со вкусом!</span></h3>
+				<?=get_field('slogan',4) ?>
 			</div>
 		</article>
 	</div>
 
 	<div id="services" class="services-main-body" data-uk-parallax="{bg: '-200'}">
+		<?php $category=get_category(2);?>
 		<div class="second-service-background">
 			<div class="uk-container uk-container-center">
-				<h3 class="services-title">Наши услуги</h3>
+				<h3 class="services-title"><?=$category->name?></h3>
 				<div class="uk-grid uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+					<?php $posts=get_posts(array('category_name'=>'services','numberposts'=>3));
+					foreach ($posts as $post): setup_postdata($post);
+					?>
 					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
 						<div class="uk-panel">
-							<div class="uk-panel-badge uk-badge"><i class="uk-icon uk-icon-plane"></i></div>
-							<a href=""><h3 class="uk-panel-title">Организация маршрутов <br> любой сложности</h3></a>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum deleniti doloremque dolores exercitationem molestiae sapiente! Ad consectetur laudantium praesentium provident ullam! Ad alias aspernatur deleniti ipsum sed tenetur, voluptatem.
+							<div class="uk-panel-badge uk-badge"><?=get_field('icon')?></div>
+							<a href="<?=get_permalink()?>"><h3 class="uk-panel-title"><?=get_the_title()?></h3></a>
+							<?php the_content() ?>
 						</div>
 					</div>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
-						<div class="uk-panel">
-							<div class="uk-panel-badge uk-badge"><i class="uk-icon uk-icon-flag"></i></div>
-							<a href="#"><h3 class="uk-panel-title">Визовая <br> поддержка</h3></a>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum deleniti doloremque dolores exercitationem molestiae sapiente! Ad consectetur laudantium praesentium provident ullam! Ad alias aspernatur deleniti ipsum sed tenetur, voluptatem.
-						</div>
-					</div>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
-						<div class="uk-panel">
-							<div class="uk-panel-badge uk-badge"><i class="uk-icon uk-icon-group"></i></div>
-							<a href="#"><h3 class="uk-panel-title">Организация деловых <br> и личных поездок</h3></a>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum deleniti doloremque dolores exercitationem molestiae sapiente! Ad consectetur laudantium praesentium provident ullam! Ad alias aspernatur deleniti ipsum sed tenetur, voluptatem.
-						</div>
-					</div>
+					<?php endforeach; wp_reset_query();?>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="about" class="about-body">
+		<?php $post=get_post(19); setup_postdata($post); ?>
 		<div class="about-background-body">
 			<div class="uk-container uk-container-center uk-text-center">
-				<h3>О нас</h3>
+				<h3><?=get_the_title()?></h3>
 				<div class="uk-grid">
+					<?php foreach (pp_gallery_get() as $image): ?>
 					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-5">
 						<div class="icon-number">
-							<img src="public/img/icon/building.png" alt="">
+							<img src="<?=$image->url?>" alt="">
 						</div>
 						<p class="icon-title">
-							10 ЛЕТ <br>
-							НА РЫНКЕ
+							<?=$image->description?>
 						</p>
 					</div>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-5">
-						<div class="icon-number">
-							<img src="public/img/icon/mark.png" alt="">
-						</div>
-						<p class="icon-title">
-							НАПРАВЛЕНИЯ <br>
-							В 50 СТРАН МИРА
-						</p>
-					</div>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-5">
-						<div class="icon-number">
-							<img src="public/img/icon/people.png" alt="">
-						</div>
-						<p class="icon-title">
-							100 ДОВОЛЬНЫХ <br>
-							КЛИЕНТОВ
-						</p>
-					</div>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-5">
-						<div class="icon-number">
-							<img src="public/img/icon/hands.png" alt="">
-						</div>
-						<p class="icon-title">
-							100 ПРОВЕРЕННЫХ <br>
-							ПАРТНЕРОВ
-						</p>
-					</div>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-5">
-						<div class="icon-number">
-							<img src="public/img/icon/doc.png" alt="">
-						</div>
-						<p class="icon-title">
-							30 ДИПЛОММИРОВАННЫХ <br>
-							СОТРУДНИКОВ
-						</p>
-					</div>
+					<?php endforeach; ?>
 				</div>
 				<div class="uk-grid">
 					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-1">
 						<article>
-							<img class="logo-article" src="public/img/logo.png" alt="">
-							Компания «GMB travel» предоставляет свои услуги в сфере авиаперевозоки туристических услуг. Наш коллектив — это высококвалифицированные сотрудники с опытом работы более 10 лет, имеющие сертификаты различных систем бронирований, а также Международной Ассоциации Воздушного транспорта (IATA) .
-
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis facere ipsum
-							mollitia natus nostrum quia reprehenderit sit sunt! Facere incidunt nam neque quia
-							repellat similique totam. Dolor eligendi laborum non?
-
-							A accusamus, amet animi beatae commodi consequuntur debitis dolores doloribus ea
-							eaque eveniet facere iusto labore laboriosam magnam maxime natus omnis pariatur
-							quibusdam, quod saepe soluta suscipit tenetur voluptas, voluptates!
-
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum hic molestias
-							placeat recusandae sequi tenetur ut! Dolorem eos et impedit iusto? Dolor doloremque
-							incidunt iste quae quod similique, vel?
-
-							Aperiam culpa cupiditate dignissimos dolore doloremque eligendi eveniet excepturi
-							expedita iste iure laborum, maxime molestiae natus nihil odio odit omnis provident
-							quidem quis quisquam, quos repellendus unde voluptas. Ad, in?
+							<img class="logo-article" src="<?=get_the_post_thumbnail_url()?>" alt="">
+							<?php the_content() ?>
 						</article>
 					</div>
 				</div>
 			</div>
 		</div>
+		<?php wp_reset_query(); ?>
 	</div>
 
 	<div id="reviews" class="reviews-body" data-uk-parallax="{bg: '-200'}">
